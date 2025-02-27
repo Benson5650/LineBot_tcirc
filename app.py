@@ -87,8 +87,8 @@ if __name__ == "__main__":
 #  本機測試 LINE Bot 需使用 Ngrok 將本機伺服器公開至網際網路。
 #  此版本使用 pyngrok 自動啟動 Ngrok 隧道。
 
-#  1. 安裝 pyngrok:
-#     - 開啟終端機，執行指令: pip install pyngrok
+#  1. 安裝依賴套件:
+#     - pip install -R requirements.txt
 
 #  2. 取得 Ngrok Auth Token:
 #     - 前往 ngrok 儀表板 (https://dashboard.ngrok.com/login) 並登入
@@ -98,14 +98,17 @@ if __name__ == "__main__":
 #  3. 將 Auth Token 加入程式碼:
 #     - 將步驟 2 複製的 Auth Token  貼到程式碼中的  `ngrok.set_auth_token("YOUR_AUTH_TOKEN")`  的引號中，取代  `YOUR_AUTH_TOKEN`
 
-#  4. 執行 Python 程式:
+#  4. 設定 LINE Channel Secret 和 Access Token:
+#     - 請替換程式碼中的 `<channel_secret>` 和 `<channel_access_token>` 為你的 LINE Bot 的 Channel Secret 和 Access Token
+
+#  5. 執行 Python 程式:
 #     - 在終端機執行: python your_script_name.py
 
-#  5. 複製 Ngrok HTTPS URL:
+#  6. 複製 Ngrok HTTPS URL:
 #     - 程式執行後，終端機將印出 Ngrok 隧道 URL (例如： https://xxxxxx.ngrok-free.app)
 #     - 複製此 URL
 
-#  6. 設定 LINE Developers Console Webhook URL:
+#  7. 設定 LINE Developers Console Webhook URL:
 #     - 開啟 LINE Developers Console (https://developers.line.biz/console/)
 #     - 選擇你的 LINE Bot 服務
 #     - 進入 "Webhook" 設定頁面
