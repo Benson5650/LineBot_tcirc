@@ -80,45 +80,4 @@ if __name__ == "__main__":
     app.run(debug=options.debug, port=port)
 
 
-#  外部 Ngrok 使用說明:
-#  -----------------------------------
-#  本機測試 LINE Bot 需使用 Ngrok 將本機伺服器公開至網際網路。
-#  此版本使用外部 ngrok 執行檔而非 pyngrok 函式庫。
 
-#  1. 安裝 ngrok:
-#     - 前往 https://ngrok.com/download 下載並安裝 ngrok
-
-#  2. 註冊 Ngrok 帳號並取得 Auth Token:
-#     - 前往 ngrok 儀表板 (https://dashboard.ngrok.com/login) 並登入
-#     - 在左側選單中，找到 "Your Authtoken"
-#     - 複製你的 Auth Token
-
-#  3. 設定 ngrok Auth Token:
-#     - 在終端機或命令提示字元中執行: ngrok config add-authtoken <YOUR_AUTH_TOKEN>
-#     - 替換 YOUR_AUTH_TOKEN 為你在步驟 2 中複製的令牌
-
-#  4. 設定 LINE Channel Secret 和 Access Token:
-#     - 請替換程式碼中的 `<channel_secret>` 和 `<channel_access_token>` 為你的 LINE Bot 的 Channel Secret 和 Access Token
-
-#  5. 啟動 Flask 應用程式:
-#     - 在終端機執行: python app_external_ngrok.py
-#     - 注意 Flask 使用的端口號 (預設為 8000)
-
-#  6. 在新的終端機視窗啟動 ngrok:
-#     - 執行: ngrok http 8000
-#     - 如果使用非預設端口，請相應地替換數字
-
-#  7. 複製 Ngrok HTTPS URL:
-#     - ngrok 啟動後，終端機將顯示 Forwarding URL
-#     - 複製 https 開頭的 URL (例如: https://xxxx-xxxx-xxxx-xxxx.ngrok-free.app)
-
-#  8. 設定 LINE Developers Console Webhook URL:
-#     - 開啟 LINE Developers Console (https://developers.line.biz/console/)
-#     - 選擇你的 LINE Bot 服務
-#     - 進入 "Webhook" 設定頁面
-#     - 將 "Webhook URL" 設定為複製的 Ngrok HTTPS URL，並加上 "/callback"
-#       (例如: https://xxxx-xxxx-xxxx-xxxx.ngrok-free.app/callback)
-#     - 啟用 "Use webhook"
-#     - 按下 "Verify" 按鈕，確認 Webhook URL 設定正確
-
-#  完成以上步驟，LINE Bot 即可透過外部 ngrok 隧道連線到本機伺服器進行測試!
